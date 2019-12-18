@@ -5,15 +5,17 @@ var percorrenza = parseInt(prompt("Quanti chilometri vuoi percorrere ?"));
 var eta = parseInt(prompt("Quanti anni hai ?"));
 var prezzoAlKilometro = 0.21;
 var prezzoBigliettoSenzaSconto = prezzoAlKilometro * percorrenza;
+var scritto = "Il prezzo del biglietto è "
+var euro = " Euro"
 console.log(prezzoBigliettoSenzaSconto);
 
 // 2 Il prezzo del biglietto è definito in base ai km (0.21 € al km),
 // ma va applicato uno sconto del 20% per i minorenni e del 40% per gli over 65.
 
 if (eta <= 18) {
- console.log((prezzoBigliettoSenzaSconto / 100) * 80);
+ document.getElementById('costo').innerHTML = scritto + ((prezzoBigliettoSenzaSconto / 100) * 80) + euro;
 } else if (eta >= 65) {
- console.log((prezzoBigliettoSenzaSconto / 100) * 60);
+ document.getElementById('costo').innerHTML = scritto + ((prezzoBigliettoSenzaSconto / 100) * 60) + euro;
 } else {
-console.log(prezzoBigliettoSenzaSconto);
+ document.getElementById('costo').innerHTML = scritto + (prezzoBigliettoSenzaSconto) + euro;
 }
